@@ -2,14 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>링크</title>
+        <title>종합적으로 만들어보자</title>
         <style>
-
+            h1{color: red;}
+            div{
+                border: 3px solid red;
+                padding: 10px;
+                margin:20px;
+                width: 90px; height: 35px;
+                color: green;
+            }
+            .box{
+                box-sizing: content-box;
+                border: 5px solid yellow;
+                background-image: url(./ball.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 1500px; height: 1500px;
+                padding: 30px;
+            }
+            .abs{
+                width: 100px; height: 100px;
+                background-color: red;
+                position: absolute;
+                top:300px;
+             }
+            p{
+                clear: both;
+             }
         </style>
     </head>
     <body>
-        <h1>메타태그 추가하기</h1>
-        <h2>서브타이틀</h2>
+        <h1>공부하기</h1>
+        <div>웹공부하기</div>
+        <div class="box"></div>
+        <div class="abs"></div>
         <p>김현우</p>
     </body>
 </html>

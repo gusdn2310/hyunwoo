@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>웹게임</title>
+</head>
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!--<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>-->
+<script src="http://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+     'use strict';
+     //함수 컴포넌트
+     //const LikeButton =() =>{} this 쓸 일이 없다
+     function LikeButton() {
+      const[liked, setLiked] =React.useState(false); //구조분해
+      // const[news, setNews] =React.useState(['뉴스1','뉴스2','뉴스3'])
+      // const[category, setCategory] =React.useState(['스포츠','레시피','쇼핑'])
+      // 결국 return한게 화면임
+      if(liked){
+        return 'You liked this.';
+      }
+      return(
+        <button onClick={() => {setLiked(true);}}>Like</button> 
+      );
+     }
+//const e = React.createElement;
+/*const array =[]:
+array.b='c';
+function a() {}
+concat, sclice 새로운 배열을 만들어냄*/
+
+/*class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {liked: false};//데이터
+  }
+
+  render() {
+    if (this.state.liked) {
+      return 'You liked this.';
+    }
+
+    //return React.createElement('button', {onClick: () => this.setState({liked: true})}, 'Like');//화면
+    return(
+      <button onClick={() => this.setState({liked: true})}>
+        Like
+        </button>//jsx
+        //{this.state.liked ? 'Liked' : 'Like!'}
+        //<input type="text" /> <- 태그 2개 안댐 <div> 사용 <> </> <-나중에 배우나 이것도 가능
+          //객체를 함부로 바꾸지 마라(불변성)
+    );//바벨을 주가해야함
+  }
+}*/
+</script>
+<script type="text/babel">
+  //ReactDOM.render((<LikeButton />), document.querySelector('#root')); //React 17버전
+  ReactDOM.createRoot(document.querySelector("#root")).render(<LikeButton />) // React 18버전 <- 이것도 태크이다(<LikeButton />)
+</script>
+</body>
+</html>
